@@ -8,5 +8,7 @@ GetNewHeadlineIntent tell me something
 GetNewHeadlineIntent give me something
 GetNewHeadlineIntent tell me top news
 GetNewHeadlineIntent what's going on today
-
-GetNextHeadlineIntent read me another article
+GetNewHeadlineIntent what's the news today
+GetNewHeadlineIntent what are today's headlines
+GetNewHeadlineIntent get news
+GetNewHeadlineIntent next news
