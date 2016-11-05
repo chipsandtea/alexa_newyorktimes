@@ -1,0 +1,19 @@
+{
+  "intents": [
+    {
+      "intent": "GetNewHeadlineIntent",
+    },
+    {
+      "intent": "GetNextHeadlineIntent",
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

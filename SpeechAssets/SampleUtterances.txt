@@ -1,0 +1,12 @@
+GetNewHeadlineIntent news
+GetNewHeadlineIntent give me news
+GetNewHeadlineIntent give me info
+GetNewHeadlineIntent give me some information
+GetNewHeadlineIntent give me some news
+GetNewHeadlineIntent tell me some news
+GetNewHeadlineIntent tell me something
+GetNewHeadlineIntent give me something
+GetNewHeadlineIntent tell me top news
+GetNewHeadlineIntent what's going on today
+
+GetNextHeadlineIntent read me another article
