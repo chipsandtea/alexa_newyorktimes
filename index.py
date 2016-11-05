@@ -63,6 +63,7 @@ def on_intent(intent_request, session):
 
     # Dispatch to your skill's intent handlers
     if intent_name == "GetNewsIntent":
+        print('GetNewsIntent')
         return get_news(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_help_response(intent, session)
@@ -106,7 +107,7 @@ def get_welcome_response():
 def get_help_response(intent, session):
     session_attributes = session.get('attributes', {})
     card_title = "Help"
-    speech_output = "I can read you the top news headlines. Just say, " \
+    speech_output = "Need Help? I can read you the top news headlines. Just say, " \
                     "what's in the news." 
     reprompt_text = "I'm sorry, I didn't hear what you said. " \
                     "Please tell me if you want news."
@@ -125,7 +126,7 @@ def get_cancel_response(intent, session):
         card_title, speech_output, reprompt_text, should_end_session))
 
 
-def get_url(section):
+def get_url():
     """
     Returns the URL for the RSS feed based on the news section
     """
@@ -144,12 +145,12 @@ def get_news(intent, session, num_headlines=3):
     for i in range(len(parsed['results'])):
         headlines.append(parsed['results'][i]['title'])
 
-    speech_output = "Here's what's new in {} news.".format(section)
-    for headline in headlines:
-        speech_output += " " + headline
+    speech_output = "Here's what's new in " + headlines[0]
+    #for headline in headlines:
+    #   speech_output += " " + headline
 
     reprompt_text = None
-    should_end_session = True
+    should_end_session = False
 
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
