@@ -49,7 +49,7 @@ def get_welcome_response():
     """
 
     session_attributes = {}
-    card_title = "Good Morning"
+    card_title = "Welcome"
     speech_output = "Welcome to the Alexa Skills Kit sample. " \
                     "Please tell me your favorite color by saying, " \
                     "my favorite color is red"
