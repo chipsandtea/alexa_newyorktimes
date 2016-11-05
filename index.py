@@ -5,6 +5,7 @@ from __future__ import print_function
 import requests
 import json
 
+curr = 0
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -142,11 +143,14 @@ def get_news(intent, session, num_headlines=3):
     r = requests.get(url)
     parsed = json.loads(r.content)
     headlines = []
+    categories = []
     for i in range(len(parsed['results'])):
+        categories.append(parsed['results'][i]['section'])
         headlines.append(parsed['results'][i]['title'])
 
-    speech_output = "Here's what's new in " + headlines[0]
-    #for headline in headlines:
+    speech_output = "Here's what's new in " + categories[0]
+    speech_output += headlines[0]
+    #for headline in range(num_headlines):
     #   speech_output += " " + headline
 
     reprompt_text = None
