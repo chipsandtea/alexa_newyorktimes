@@ -1,16 +1,10 @@
 {
   "intents": [
     {
-      "intent": "GetNewHeadlineIntent"
-    },
-    {
-      "intent": "GetNextHeadlineIntent"
+      "intent": "GetNewsIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
     },
     {
       "intent": "AMAZON.CancelIntent"
