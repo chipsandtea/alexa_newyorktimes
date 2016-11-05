@@ -1,10 +1,10 @@
 {
   "intents": [
     {
-      "intent": "GetNewHeadlineIntent",
+      "intent": "GetNewHeadlineIntent"
     },
     {
-      "intent": "GetNextHeadlineIntent",
+      "intent": "GetNextHeadlineIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
