@@ -1,8 +1,14 @@
 GetNewsIntent get news
 GetNewsIntent give me news
+GetNewsIntent give me some news
+GetNewsIntent tell me news
 GetNewsIntent what's in the news
+GetNewsIntent what's in the news today
 GetNewsIntent give me info
 GetNewsIntent give me some information
 GetNewsIntent give me some news
 GetNewsIntent tell me some news
 GetNewsIntent tell me something
+GetNewsIntent what's going on today
+GetNewsIntent what's trending
+GetNewsIntent talk

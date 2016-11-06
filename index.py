@@ -108,7 +108,7 @@ def get_welcome_response():
 def get_help_response(intent, session):
     session_attributes = session.get('attributes', {})
     card_title = "Help"
-    speech_output = "Need Help? I can read you the top news headlines. Just say, " \
+    speech_output = "Need Help? I can read you the today's top news headlines. Just say, " \
                     "what's in the news." 
     reprompt_text = "I'm sorry, I didn't hear what you said. " \
                     "Please tell me if you want news."
@@ -120,26 +120,26 @@ def get_help_response(intent, session):
 def get_cancel_response(intent, session):
     session_attributes = {}
     card_title = "Goodbye"
-    speech_output = "Have a good day, Chris!"
+    speech_output = "Have a bad day, Chris!"
     reprompt_text = None
     should_end_session = True
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
-
+'''
 def get_url():
     """
     Returns the URL for the RSS feed based on the news section
     """
     return 'http://api.nytimes.com/svc/topstories/v1/home.json?api-key=4f085be2b93a4c4b8ca57c3d59aa1942'
-
+'''
 
 def get_news(intent, session, num_headlines=3):
     """ Gets the news headlines"""
     card_title = "News Headlines"
     session_attributes = session.get('attributes', {})
 
-    url = get_url()
+    url = 'http://api.nytimes.com/svc/topstories/v1/home.json?api-key=4f085be2b93a4c4b8ca57c3d59aa1942'
     r = requests.get(url)
     parsed = json.loads(r.content)
     headlines = []
@@ -148,7 +148,8 @@ def get_news(intent, session, num_headlines=3):
         categories.append(parsed['results'][i]['section'])
         headlines.append(parsed['results'][i]['title'])
 
-    speech_output = "Here's what's new in " + categories[0]
+    speech_output = "Here are the top headlines in the New York Times " #+ categories[0]
+
     speech_output += headlines[0]
     #for headline in range(num_headlines):
     #   speech_output += " " + headline
